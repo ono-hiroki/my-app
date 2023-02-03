@@ -10,7 +10,7 @@ install:
 up:
 	docker compose up -d
 build:
-	docker compose build
+	sudo docker compose build
 remake:
 	@make destroy
 	@make install
