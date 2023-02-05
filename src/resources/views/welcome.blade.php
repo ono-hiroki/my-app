@@ -24,7 +24,7 @@
         @vite(['resources/js/app.jsx'])
     </head>
     <body class="antialiased">
-    こんちくは welcome to laravel
+    こんちくは welcome to laravel, React
     <div id="app"></div>
     </body>
 </html>
