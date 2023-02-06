@@ -37,11 +37,6 @@
     @endif
 
     こんちくわ
-    @if($users)
-        {{ $users->first()->name }}
-    @endif
-
-    <div id="react" data-blade={{ $users->first()->name }}></div>
 
 
 
