@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//
-Route::get('/', function () {
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('{any}', function () {
     return view('welcome');
 })->where('any','.*');
-//php artisan ui bootstrap --auth で生成されるルーティング設定
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

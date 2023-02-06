@@ -21,8 +21,8 @@ function Example() {
 
 export default Example;
 
-if (document.getElementById('example2')) {
-    const Index = ReactDOM.createRoot(document.getElementById("example2"));
+if (document.getElementById('app')) {
+    const Index = ReactDOM.createRoot(document.getElementById("app"));
 
     Index.render(
         <React.StrictMode>
