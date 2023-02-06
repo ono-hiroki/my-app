@@ -12,20 +12,4 @@ import './bootstrap';
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// import './components/Example';
-
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createRoot } from 'react-dom/client';
-
-import App from './components/App';
-
-console.log('Hello World from React');
-
-if (document.getElementById('example')) {
-    const root = createRoot(document.getElementById('example
-    root.render(<App />);
-}
-
-
-
+import './components/Example';
