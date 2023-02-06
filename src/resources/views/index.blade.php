@@ -37,7 +37,6 @@
     @endif
 
     こんちくわ
-    <div id="react" data-blade={{ $users->first()->name }}></div>
 
 
 
