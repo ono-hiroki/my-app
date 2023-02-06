@@ -22,8 +22,8 @@ import App from './components/App';
 
 console.log('Hello World from React');
 
-if (document.getElementById('example')) {
-    const root = createRoot(document.getElementById('example
+if (document.getElementById('app')) {
+    const root = createRoot(document.getElementById('app'));
     root.render(<App />);
 }
 
