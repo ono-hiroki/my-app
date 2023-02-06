@@ -37,7 +37,10 @@
     @endif
 
     こんちくわ
-    {{ $users->first()->name }}
+    @if($users)
+        {{ $users->first()->name }}
+    @endif
+
     <div id="react" data-blade={{ $users->first()->name }}></div>
 
 
