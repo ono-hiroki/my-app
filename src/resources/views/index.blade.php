@@ -19,6 +19,8 @@
             font-family: 'Nunito', sans-serif;
         }
     </style>
+    @viteReactRefresh
+    @vite(['resources/css/app.css', 'resources/js/app.jsx'])
 </head>
 <body class="antialiased">
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
@@ -36,7 +38,10 @@
         </div>
     @endif
 
-    こんちくわ
+
+
+    <div>こんちくわ</div><br>
+    <div id="react" data-blade="{{ $users }}"></div>
 
 
 

@@ -22,8 +22,28 @@ import App from './components/App';
 
 console.log('Hello World from React');
 
-if (document.getElementById('example')) {
-    const root = createRoot(document.getElementById('example
+if (document.getElementById('react')) {
+    const root = createRoot(document.getElementById('react'));
+    const element = document.getElementById('react');
+    console.log(element)
+    //data-bladeを持つ要素を取得
+    const data = element.getAttribute('data-blade');
+    console.log(data)
+    // dataの中身をJSONに変換
+    const json = JSON.parse(data);
+    console.log(json,'json')
+
+    // jsonのnameを取得
+    const name = json.name;
+    console.log(json[0].name,'name')
+
+
+
+    //data-bladeを持つ要素を削除
+    element.removeAttribute('data-blade');
+
+
+
     root.render(<App />);
 }
 
