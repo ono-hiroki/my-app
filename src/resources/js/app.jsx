@@ -20,7 +20,6 @@ import { createRoot } from 'react-dom/client';
 
 import App from './components/App';
 
-console.log('Hello World from React');
 
 if (document.getElementById('react')) {
     const root = createRoot(document.getElementById('react'));
@@ -32,18 +31,11 @@ if (document.getElementById('react')) {
     // dataの中身をJSONに変換
     const json = JSON.parse(data);
     console.log(json,'json')
-
     // jsonのnameを取得
     const name = json.name;
     console.log(json[0].name,'name')
-
-
-
     //data-bladeを持つ要素を削除
     element.removeAttribute('data-blade');
-
-
-
     root.render(<App />);
 }
 

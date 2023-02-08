@@ -13,6 +13,7 @@ export default defineConfig({
             input: [
                 'resources/sass/app.scss',
                 'resources/js/app.jsx',
+                'resources/js/WebSite1.jsx',
             ],
             refresh: true,
         }),

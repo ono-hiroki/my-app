@@ -2,15 +2,6 @@ import React from 'react';
 
 
 
-// const App = () => {
-//     return (
-//         <div>
-//             <h1>Laravel 9</h1>
-//         </div>
-//     );
-// }
-
-// react18での書き方
 const App = () => {
     return (
         <div>
