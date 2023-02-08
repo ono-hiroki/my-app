@@ -42,6 +42,7 @@
 
     <div>こんちくわ</div><br>
     <div id="react" data-blade="{{ $users }}"></div>
+    <div id="react2" data-blade="{{ $users }}"></div>
 
 
 

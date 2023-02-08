@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\WebSiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,5 +28,5 @@ Auth::routes();
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-
-
+Route::get('/web-site', [WebSiteController::class, 'index'])->name('web-site');
+Route::get('/web-site/1', [WebSiteController::class, 'webSite'])->name('beautiful-day');
