@@ -1,8 +1,6 @@
 import React from 'react';
 
-
-
-const App = () => {
+const Index = () => {
     return (
         <div>
             <h1>Laravel 9</h1>
@@ -10,4 +8,4 @@ const App = () => {
     );
 }
 
-export default App;
+export default Index;

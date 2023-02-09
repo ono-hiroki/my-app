@@ -15,14 +15,11 @@ import './bootstrap';
 // import './components/Example';
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
+import Index from './index/Index';
 
-import App from './components/App';
-
-
-if (document.getElementById('react')) {
-    const root = createRoot(document.getElementById('react'));
+if (document.getElementById('root-container')) {
+    const root = createRoot(document.getElementById('root-container'));
     const element = document.getElementById('react');
     console.log(element)
     //data-bladeを持つ要素を取得
@@ -36,7 +33,7 @@ if (document.getElementById('react')) {
     console.log(json[0].name,'name')
     //data-bladeを持つ要素を削除
     element.removeAttribute('data-blade');
-    root.render(<App />);
+    root.render(<Index />);
 }
 
 
