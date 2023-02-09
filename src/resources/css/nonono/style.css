@@ -147,7 +147,7 @@ iframe {
 /* HOME
 ------------------------------- */
 #home {
-    background-image: url(../../images/A1.JPG);
+    background-image: url("https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b186db3d-d326-48a0-ba99-31fbe4069903/DSC_0256_2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230209%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230209T123610Z&X-Amz-Expires=86400&X-Amz-Signature=f34b606e2451bc23925f5b2a29eaaa48eaeeb61ba57b2dc8eb2ec4535b7630d3&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22DSC_0256_2.JPG.jpg%22&x-id=GetObject");
     background-color: rgba(255, 255, 255, .5);
 ;
     background-blend-mode: soft-light;
