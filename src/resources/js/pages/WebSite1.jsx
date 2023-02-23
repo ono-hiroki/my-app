@@ -1,6 +1,6 @@
 import {createRoot} from "react-dom/client";
 import React from "react";
-import 'katex/dist/katex.min.css';
+// import 'katex/dist/katex.min.css';
 // import {InlineMath, BlockMath} from 'react-katex';
 
 // import 'katex/dist/katex.min.css'
