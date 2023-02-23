@@ -15,6 +15,7 @@ export default defineConfig({
                 'resources/css/reset.css',
                 'resources/js/app.jsx',
                 'resources/css/nonono/style.css',
+                'resources/js/pages/WebSite1.jsx',
                 'resources/js/WebSite1.jsx',
             ],
             refresh: true,

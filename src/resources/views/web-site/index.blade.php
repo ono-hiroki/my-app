@@ -20,9 +20,12 @@
         }
     </style>
     @viteReactRefresh
-    @vite(['resources/js/app.jsx'])
+    @vite(['resources/js/pages/WebSite1.jsx'])
 </head>
 <body class="antialiased">
+    <div class="root-container">aaa</div>
+    <div id="root-container"></div>
+
     index.blade.php
     <div>こんちくわ</div>
 </body>
