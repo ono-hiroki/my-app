@@ -12,7 +12,6 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/sass/app.scss',
-                'resources/css/reset.css',
                 'resources/js/app.jsx',
                 'resources/css/nonono/style.css',
                 'resources/js/pages/WebSite1.jsx',

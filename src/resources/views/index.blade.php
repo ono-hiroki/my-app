@@ -20,7 +20,7 @@
         }
     </style>
     @viteReactRefresh
-    @vite(['resources/js/app.jsx', 'resources/css/reset.css'])
+    @vite(['resources/js/app.jsx'])
 </head>
 <body class="antialiased">
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
