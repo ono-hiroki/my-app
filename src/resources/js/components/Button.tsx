@@ -1,12 +1,20 @@
-import {createRoot} from "react-dom/client";
-import React from "react";
-import 'katex/dist/katex.min.css';
-import {InlineMath, BlockMath} from 'react-katex';
-import styled from "styled-components";
-import 'katex/dist/katex.min.css'
-import {Button} from "../components/Button";
+// Buttonを作成する
+//
+// 1. Button.tsxを作成する
+// 2. Button.tsxに以下のコードを記述する
+// 3. Button.tsxをインポートする
+// 4. Buttonを使用する
+//
 
+import React from 'react'
+import styled from 'styled-components';
 
+type ButtonProps = {
+    buttonType: string;
+    text: string;
+    disabled?: boolean;
+    handleClick: (event: any) => void;
+};
 
 const ButtonStyle = styled.button`
   width: 100%;
@@ -51,25 +59,12 @@ const ButtonStyle = styled.button`
   user-select: none;
 `;
 
-const App = () => {
-    return (
-        <div>
-            <ButtonStyle className="primary">Click me</ButtonStyle>
-            <Button>Click me</Button><br/>
 
-            <InlineMath>\int_0^\infty x^2 dx</InlineMath>
-            <BlockMath
-                math={'\\int_0^\\infty x^2 dx'}
-                errorColor={'#cc0000'}
-            />
-            <BlockMath math={`\\frac{\\text{m}} {\\text{s}^2}`}/>
-            <h1>Laravel aa999</h1>
-        </div>
-    );
-}
-
-if (document.getElementById('root-container')) {
-    const root = createRoot(document.getElementById('root-container'));
-
-    root.render(<App/>);
-}
+export const Button: React.FC<ButtonProps> = (props) => (
+    <ButtonStyle
+        onClick={props.handleClick}
+        disabled={props.disabled}
+        className={props.buttonType}>
+        {props.text}
+    </ButtonStyle>
+);
