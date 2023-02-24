@@ -16,6 +16,7 @@ export default defineConfig({
                 'resources/css/nonono/style.css',
                 'resources/js/pages/WebSite1.jsx',
                 'resources/js/WebSite1.jsx',
+                'resources/js/reactflow/edit.jsx',
             ],
             refresh: true,
         }),

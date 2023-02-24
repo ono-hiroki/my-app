@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ReactFlowController extends Controller
@@ -13,6 +14,8 @@ class ReactFlowController extends Controller
 
     public function edit()
     {
-        return view('reactflow.edit');
+        $users = User::all();
+
+        return view('reactflow.edit', compact('users'));
     }
 }
