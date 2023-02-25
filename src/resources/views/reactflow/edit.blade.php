@@ -10,15 +10,26 @@
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Nunito', sans-serif;
+        .text-updater-node {
+            height: 50px;
+            border: 1px solid #eee;
+            padding: 5px;
+            border-radius: 5px;
+            background: white;
         }
+
+        .text-updater-node label {
+            display: block;
+            color: #777;
+            font-size: 12px;
+        }
+
     </style>
     @viteReactRefresh
     @vite(['resources/js/reactflow/edit.jsx'])
 </head>
 <body class="antialiased">
-<div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+<div style="background-color: #eaeaea;">
     @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             @auth
@@ -32,10 +43,11 @@
             @endauth
         </div>
     @endif
+</div>
 
-    <div id="react" data-blade="{{ $users }}"></div>
-    <div id="react2" data-blade="{{ $users }}"></div>
-    <div id="root-container"></div>
+<div id="react" data-blade="{{ $users }}"></div>
+<div id="react2" data-blade="{{ $users }}"></div>
+<div id="root-container"></div>
 
 
 
