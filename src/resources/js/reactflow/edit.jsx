@@ -25,6 +25,7 @@ const selector = (state) => ({
     onConnect: state.onConnect,
     onDragOver: state.onDragOver,
     onDrop: state.onDrop,
+    updateNodeLabel: state.updateNodeLabel,
 });
 
 const App = () => {

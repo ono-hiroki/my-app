@@ -9,9 +9,9 @@ const getId = () => `edge_${id++}`;
 
 const useStore = create((set, get) => ({
     nodes: [
-        {id: 'node-1', type: 'textUpdater', position: {x: 0, y: 0}, data: {value: 123}},
-        {id: 'node-2', type: 'textUpdater', position: {x: 200, y: 0}, data: {value: 456}},
-        {id: 'node-3', type: 'textUpdater', position: {x: 100, y: 100}, data: {value: 789}},
+        {id: 'node-1', type: 'textUpdater', position: {x: 0, y: 0}, data: {label: 123}},
+        {id: 'node-2', type: 'textUpdater', position: {x: 200, y: 0}, data: {label: 456}},
+        {id: 'node-3', type: 'textUpdater', position: {x: 100, y: 100}, data: {label: 789}},
     ],
     edges: [
     ],
@@ -64,6 +64,19 @@ const useStore = create((set, get) => ({
     onDragOver: (event) => {
         event.preventDefault();
         event.dataTransfer.dropEffect = 'move';
+    },
+
+    updateNodeLabel: (id, label) => {
+
+        set({
+            nodes: get().nodes.map((node) => {
+                if (node.id === id) {
+                    node.data = {...node.data, label};
+                }
+
+                return node;
+            }),
+        });
     },
 }));
 

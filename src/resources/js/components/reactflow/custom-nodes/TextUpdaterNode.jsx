@@ -4,20 +4,34 @@ import React from "react";
 import {createRoot} from "react-dom/client";
 import ReactFlow, {Controls, Background, applyNodeChanges, applyEdgeChanges, addEdge} from 'reactflow';
 import 'reactflow/dist/style.css';
+import useStore from "../store";
 
 const handleStyle = { left: 10 };
 
-function TextUpdaterNode({ data, isConnectable }) {
+function TextUpdaterNode(props) {
+    const { data, isConnectable, id } = props;
+
+    // console.log("props", props);
     const onChange = useCallback((evt) => {
-        console.log(evt.target.value);
+        // console.log(evt.target.value);
     }, []);
+    const updateNodeLabel = useStore((state) => state.updateNodeLabel);
 
     return (
         <div className="text-updater-node">
             <Handle type="target" position={Position.Top} isConnectable={isConnectable} />
             <div>
                 <label htmlFor="text">Text:</label>
-                <input id="text" name="text" onChange={onChange} className="nodrag" />
+                <input
+                    id="text"
+                    name="text"
+                    value={data.label}
+                    onChange={(evt) => {
+                        onChange(evt);
+                        updateNodeLabel(id, evt.target.value);
+                    }}
+                    className="nodrag"
+                />
             </div>
             <Handle
                 type="source"
