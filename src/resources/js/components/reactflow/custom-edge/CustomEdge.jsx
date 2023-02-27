@@ -60,7 +60,6 @@ export default function CustomEdge(props) {
                 requiredExtensions="http://www.w3.org/1999/xhtml"
             >
                 <div style={{width: '100%', height: '100%', background: '#fff'}}>
-                    {/*<p>test</p>*/}
                     <input
                         type="text"
                         value={state}

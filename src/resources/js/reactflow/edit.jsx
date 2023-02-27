@@ -41,7 +41,6 @@ const App = () => {
     const {width, height} = useGetWindowSize();
     const reactFlowWrapper = useRef(null);
     const [selectedNode, setSelectedNode] = useState(null)
-    const [selectedEdge, setSelectedEdge] = useState(null)
 
     const onSelectionChange = useCallback(
         ({ nodes, edges }) => {
@@ -73,7 +72,6 @@ const App = () => {
                         onDrop={(event) => onDrop(event, reactFlowInstance, reactFlowWrapper)}
                         onDragOver={onDragOver}
                         // onEdgeClick={(event, edge) => console.log('edge click', edge)}
-                        // onSelectionChange={(elements) => console.log('selection change', elements)}
                         onSelectionChange={onSelectionChange}
                     />
                 </div>

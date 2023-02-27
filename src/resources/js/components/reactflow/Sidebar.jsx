@@ -5,7 +5,6 @@ export default (props) => {
         event.dataTransfer.setData('application/reactflow', nodeType); // nodeTypeをdataTransferに保存
         event.dataTransfer.effectAllowed = 'move';
     };
-    // console.log(props, 'props')
 
     return (
         <aside>

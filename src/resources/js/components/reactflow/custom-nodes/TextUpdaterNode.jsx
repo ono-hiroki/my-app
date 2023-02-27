@@ -11,7 +11,6 @@ const handleStyle = { left: 10 };
 function TextUpdaterNode(props) {
     const { data, isConnectable, id } = props;
 
-    // console.log("props", props);
     const onChange = useCallback((evt) => {
         // console.log(evt.target.value);
     }, []);
