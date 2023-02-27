@@ -1,10 +1,11 @@
 import React from 'react';
 
-export default () => {
+export default (props) => {
     const onDragStart = (event, nodeType) => {
         event.dataTransfer.setData('application/reactflow', nodeType); // nodeTypeをdataTransferに保存
         event.dataTransfer.effectAllowed = 'move';
     };
+    // console.log(props, 'props')
 
     return (
         <aside>
@@ -21,6 +22,7 @@ export default () => {
             <div className="dndnode output" onDragStart={(event) => onDragStart(event, 'textUpdater')} draggable>
                 Text Updater Node
             </div>
+            <p>{props.selectedNode?.data.label}</p>
         </aside>
     );
 };

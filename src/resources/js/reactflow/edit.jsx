@@ -10,9 +10,13 @@ import Sidebar from "../components/reactflow/Sidebar";
 import useStore from "../components/reactflow/store";
 import {shallow} from "zustand/shallow";
 import ButtonEdge from "../components/reactflow/custom-edge/ButtonEdge";
+import CustomEdge from "../components/reactflow/custom-edge/CustomEdge";
 
 const nodeTypes = {textUpdater: TextUpdaterNode};
-const edgeTypes = {buttonedge: ButtonEdge};
+const edgeTypes = {
+    buttonedge: ButtonEdge,
+    custom: CustomEdge
+};
 
 
 const rfStyle = {
@@ -36,6 +40,20 @@ const App = () => {
     const [reactFlowInstance, setReactFlowInstance] = useState(null);
     const {width, height} = useGetWindowSize();
     const reactFlowWrapper = useRef(null);
+    const [selectedNode, setSelectedNode] = useState(null)
+    const [selectedEdge, setSelectedEdge] = useState(null)
+
+    const onSelectionChange = useCallback(
+        ({ nodes, edges }) => {
+            const selectedNodes = nodes.filter((node) => node.selected)
+            const selectedEdges = edges.filter((edge) => edge.selected)
+            console.log('selectedNodes', selectedNodes)
+            console.log('selectedEdges', selectedEdges)
+            if (selectedNodes.length === 0) setSelectedNode(null)
+            if (selectedNodes.length === 1) setSelectedNode(selectedNodes[0])
+        },
+        [],
+    )
 
     return (
         <div className="dndflow">
@@ -54,9 +72,20 @@ const App = () => {
                         onInit={setReactFlowInstance}
                         onDrop={(event) => onDrop(event, reactFlowInstance, reactFlowWrapper)}
                         onDragOver={onDragOver}
+                        // onEdgeClick={(event, edge) => console.log('edge click', edge)}
+                        // onSelectionChange={(elements) => console.log('selection change', elements)}
+                        onSelectionChange={onSelectionChange}
                     />
                 </div>
-                <Sidebar/>
+                <Sidebar
+                    nodes={nodes}
+                    edges={edges}
+                    onNodesChange={onNodesChange}
+                    onEdgesChange={onEdgesChange}
+                    addChildNode={useStore.getState().addChildNode}
+                    updateNodeLabel={useStore.getState().updateNodeLabel}
+                    selectedNode={selectedNode}
+                />
             </ReactFlowProvider>
         </div>
     );

@@ -11,7 +11,7 @@ const useStore = create((set, get) => ({
     nodes: [
         {id: 'node-1', type: 'textUpdater', position: {x: 0, y: 0}, data: {label: 123}},
         {id: 'node-2', type: 'textUpdater', position: {x: 200, y: 0}, data: {label: 456}},
-        {id: 'node-3', type: 'textUpdater', position: {x: 100, y: 100}, data: {label: 789}},
+        {id: 'node-3', type: 'textUpdater', position: {x: 100, y: 200}, data: {label: 789}},
     ],
     edges: [
         {
@@ -47,6 +47,29 @@ const useStore = create((set, get) => ({
                 stroke: '#FF0072',
             },
         },
+        {
+            id: 'edge-3',
+            source: 'node-2',
+            target: 'node-3',
+            sourceHandle: 'b',
+            targetHandle: "",
+            type: 'custom',
+            data: { text: 'custom edge' },
+            animated: true,
+            markerEnd: {
+                type: MarkerType.ArrowClosed,
+                color: '#FF0072',
+            },
+            markerStart: {
+                type: MarkerType.ArrowClosed,
+                orient: 'auto-start-reverse',
+                color: '#FF0072',
+            },
+            style: {
+                strokeWidth: 2,
+                stroke: '#FF0072',
+            },
+        }
     ],
     // ノードを動かすため
     onNodesChange: (changes) => {

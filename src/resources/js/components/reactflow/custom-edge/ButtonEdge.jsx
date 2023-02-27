@@ -11,6 +11,7 @@ const onEdgeClick = (evt, id) => {
 
 export default function CustomEdge(props) {
     const {id, sourceX, sourceY, sourcePosition, targetX, targetY, targetPosition, style = {}, markerEnd} = props;
+    // console.log(props)
     const [edgePath, labelX, labelY] = getBezierPath({
         sourceX, sourceY, sourcePosition, targetX, targetY, targetPosition,
     });
@@ -23,6 +24,7 @@ export default function CustomEdge(props) {
             d={edgePath}
             markerEnd={markerEnd}
         />
+
         <foreignObject // htmlを描画するために必要
             width={foreignObjectSize}
             height={foreignObjectSize}
