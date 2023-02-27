@@ -1,6 +1,6 @@
 import {
     applyNodeChanges,
-    applyEdgeChanges,
+    applyEdgeChanges, MarkerType,
 } from 'reactflow';
 import {create} from 'zustand';
 
@@ -14,6 +14,39 @@ const useStore = create((set, get) => ({
         {id: 'node-3', type: 'textUpdater', position: {x: 100, y: 100}, data: {label: 789}},
     ],
     edges: [
+        {
+            id: 'edge-1',
+            source: 'node-1',
+            target: 'node-2',
+            sourceHandle: 'b',
+            targetHandle: "",
+            type: 'buttonedge',
+            label: 'buttonedge',
+            animated: true,
+            style: {stroke: 'red'}
+        },
+        {
+            id: 'edge-2',
+            source: 'node-1',
+            target: 'node-3',
+            sourceHandle: 'b',
+            targetHandle: "",
+            label: 'ラベル',
+            animated: true,
+            markerEnd: {
+                type: MarkerType.ArrowClosed,
+                color: '#FF0072',
+            },
+            markerStart: {
+                type: MarkerType.ArrowClosed,
+                orient: 'auto-start-reverse',
+                color: '#FF0072',
+            },
+            style: {
+                strokeWidth: 2,
+                stroke: '#FF0072',
+            },
+        },
     ],
     // ノードを動かすため
     onNodesChange: (changes) => {
@@ -23,6 +56,7 @@ const useStore = create((set, get) => ({
     },
     // エッジをつなげたり切ったりするため
     onEdgesChange: (changes) => {
+        console.log("onEdgesChange")
         set({
             edges: applyEdgeChanges(changes, get().edges),
         });
@@ -30,6 +64,7 @@ const useStore = create((set, get) => ({
     // const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), []);
 
     onConnect: (params) => {
+        console.log("onConnect")
         const id = getId();
         set({
             edges: [...get().edges, {id, ...params}],
@@ -39,6 +74,7 @@ const useStore = create((set, get) => ({
     },
 
     onDrop: (event, reactFlowInstance, reactFlowWrapper) => {
+        console.log("onDrop")
         event.preventDefault(); // preventDefaultは、デフォルトのイベントをキャンセルするためのメソッドです。
         const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
         const type = event.dataTransfer.getData('application/reactflow');
@@ -62,12 +98,13 @@ const useStore = create((set, get) => ({
     },
 
     onDragOver: (event) => {
+        console.log("onDragOver")
         event.preventDefault();
         event.dataTransfer.dropEffect = 'move';
     },
 
     updateNodeLabel: (id, label) => {
-
+        console.log("updateNodeLabel")
         set({
             nodes: get().nodes.map((node) => {
                 if (node.id === id) {

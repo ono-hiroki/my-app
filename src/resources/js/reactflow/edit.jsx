@@ -9,8 +9,11 @@ import TextUpdaterNode from "../components/reactflow/custom-nodes/TextUpdaterNod
 import Sidebar from "../components/reactflow/Sidebar";
 import useStore from "../components/reactflow/store";
 import {shallow} from "zustand/shallow";
+import ButtonEdge from "../components/reactflow/custom-edge/ButtonEdge";
 
 const nodeTypes = {textUpdater: TextUpdaterNode};
+const edgeTypes = {buttonedge: ButtonEdge};
+
 
 const rfStyle = {
     backgroundColor: '#B8CEFF',
@@ -45,6 +48,7 @@ const App = () => {
                         onEdgesChange={onEdgesChange}
                         onConnect={(params) => onConnect(params)}
                         nodeTypes={nodeTypes}
+                        edgeTypes={edgeTypes}
                         fitView
                         style={rfStyle}
                         onInit={setReactFlowInstance}
