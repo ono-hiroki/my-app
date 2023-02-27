@@ -90,7 +90,7 @@ const useStore = create((set, get) => ({
         console.log("onConnect")
         const id = getId();
         set({
-            edges: [...get().edges, {id, ...params}],
+            edges: [...get().edges, {id, ...params, type: 'custom'}],
         });
 
 
